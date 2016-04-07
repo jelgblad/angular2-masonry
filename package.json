@@ -1,0 +1,32 @@
+{
+    "name": "angular2-masonry",
+    "version": "0.0.3",
+    "description": "Angular2 component for https://github.com/desandro/masonry",
+    "dependencies": {
+        "angular2": "^2.0.0-beta.13"
+    },
+    "devDependencies": {
+        "typescript": "^1.8.9"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "tsc"
+    },
+    "typings": "./angular2-masonry.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jelgblad/angular2-masonry.git"
+    },
+    "keywords": [
+        "angular2",
+        "component",
+        "desandro",
+        "masonry"
+    ],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/jelgblad/angular2-masonry/issues"
+    },
+    "homepage": "https://github.com/jelgblad/angular2-masonry#readme"
+}
