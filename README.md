@@ -15,7 +15,7 @@ Installation
   Add the following to SystemJS config:
   ```json
   packages: {
-    "angular2-masonry": { defaultExtension: "js" }
+    "angular2-masonry": { "defaultExtension": "js" }
   }
   map: {
     "angular2-masonry": "node_modules/angular2-masonry" 
