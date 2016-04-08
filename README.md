@@ -43,6 +43,9 @@ Installation
         <div class="brick">Brick 3</brick>
         <div class="brick">Brick 4</brick>
       </masonry>
-      `
+      `,
+      styles:[`
+       .brick { width: 200px; }
+      `]
   })
   ```
