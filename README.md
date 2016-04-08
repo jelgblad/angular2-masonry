@@ -38,14 +38,14 @@ Installation
     directives: [AngularMasonry],
     template: `
       <masonry>
-        <div class="brick">Brick 1</brick>
-        <div class="brick">Brick 2</brick>
-        <div class="brick">Brick 3</brick>
-        <div class="brick">Brick 4</brick>
+        <div class="brick">Brick 1</div>
+        <div class="brick">Brick 2</div>
+        <div class="brick">Brick 3</div>
+        <div class="brick">Brick 4</div>
       </masonry>
-      `,
-      styles:[`
-       .brick { width: 200px; }
-      `]
+    `,
+    styles: [`
+     .brick { width: 200px; }
+    `]
   })
   ```
