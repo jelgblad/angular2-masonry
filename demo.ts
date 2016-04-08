@@ -16,7 +16,7 @@ import { AngularMasonry } from 'angular2-masonry';
             <button (click)="masonry.reloadItems()">Reload items</button>
         </div>
         
-        <masonry #masonry>
+        <masonry #masonry [options]="{transitionDuration: '0.6s'}">
             <div class="brick" *ngFor="#brick of bricks">{{brick}}</div>
         </masonry>
         `
@@ -26,6 +26,10 @@ export class AppComponent {
     title: string = 'Angular2 masonry';
 
     bricks: string[] = [];
+
+    constructor() {
+
+    }
 
     addItem() {
         var index = Math.floor(Math.random() * (loremIpsum.length - 1));
