@@ -14,8 +14,11 @@ Installation
   * SystemJS:
   Add the following to SystemJS config:
   ```json
-  paths: {
-    "angular2-masonry/angular2-masonry": "node_modules/angular2-masonry/angular2-masonry.js" 
+  packages: {
+    "angular2-masonry": { defaultExtension: "js" }
+  }
+  map: {
+    "angular2-masonry": "node_modules/angular2-masonry" 
   }
   ```
 3. Include Masonry in your HTML:
