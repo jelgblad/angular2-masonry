@@ -9,3 +9,5 @@ Thumbs.db
 # Ignored files
 *.ts
 !*.d.ts
+demo*
+index.html

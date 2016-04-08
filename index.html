@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <base href="/">
+
+    <!-- 1. Load libraries -->
+    <!-- IE required polyfills, in this exact order -->
+    <script src="node_modules/es6-shim/es6-shim.min.js"></script>
+    <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
+    <script src="node_modules/angular2/es6/dev/src/testing/shims_for_IE.js"></script>
+
+    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+
+    <!-- 2. Configure SystemJS -->
+    <script>
+        System.config({
+        paths: {
+             'demo': 'demo.js',
+             'angular2-masonry': 'angular2-masonry.js'
+        }
+      });
+      
+      System.import('demo').then(null, console.error.bind(console));
+    </script>
+
+    <style>
+        body {
+            background: #eee;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .brick {
+            width: 200px;
+        }
+        
+        .brick {
+            padding: 15px;
+            margin: 10px;
+            background: #fff;
+            box-shadow: 0 0 5px 1px #aaa;
+        }
+    </style>
+
+    <title>Angular 2 Masonry</title>
+</head>
+
+<body>
+    <my-app>Loading...</my-app>
+
+    <script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
+</body>
+
+</html>

@@ -61,6 +61,6 @@ export class AngularMasonry implements AfterViewInit, AfterContentChecked {
         this._msnry.reloadItems();
         this._msnry.layout();
 
-        console.log('Masonry: reloadItems');
+        console.log('AngularMasonry: reloadItems');
     }
 }
