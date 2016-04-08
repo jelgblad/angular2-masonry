@@ -30,7 +30,7 @@ Installation
   import { AngularMasonry } from 'angular2-masonry/angular2-masonry';
   ```
   
-  Add `AngularMasonry` to @Component´s directives-array and use masonry in your component´s template:
+  Add `AngularMasonry` to @Component´s directives-array and use `<masonry></masonry>` in your component´s template:
   
   ```javascript
   @Component({
