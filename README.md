@@ -8,28 +8,22 @@
 1. Install package:
   * Through npm: `npm install angular2-masonry --save`
 
-
 2. Configure module loader:
   * SystemJS:
   Add the following to SystemJS config:
   ```json
   packages: {
     "angular2-masonry": { "defaultExtension": "js" }
-  }
+  },
   map: {
     "angular2-masonry": "node_modules/angular2-masonry" 
+  },
+  paths:{
+    "masonry": "node_modules/angular2-masonry/node_modules/masonry-layout/dist/masonry.pkgd.min.js"
   }
   ```
-
-
-3. Include Masonry in your HTML:
   
-  ```html
-  <script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
-  ```
-
-
-4. Use in your component:
+3. Use in your component:
   
   ```javascript
   import { AngularMasonry } from 'angular2-masonry/angular2-masonry';

@@ -16,7 +16,7 @@ import { AngularMasonry } from 'angular2-masonry/angular2-masonry';
             <button (click)="masonry.reloadItems()">Reload items</button>
         </div>
         
-        <masonry #masonry [options]="{transitionDuration: '0.6s'}">
+        <masonry #masonry [options]="{transitionDuration: '0.6s', itemSelector: '.brick'}">
             <div class="brick" *ngFor="#brick of bricks">{{brick}}</div>
         </masonry>
         `

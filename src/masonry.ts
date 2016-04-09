@@ -1,5 +1,7 @@
 import { Component, Input, ElementRef, AfterViewInit, AfterContentChecked } from 'angular2/core';
 
+import * as masonry from 'masonry';
+
 import { MasonryOptions } from './masonry_options';
 
 @Component({
@@ -21,7 +23,7 @@ export class AngularMasonry implements AfterViewInit, AfterContentChecked {
 
     private ngAfterViewInit() {
         this._elem = this._componentElement.nativeElement.children[0];
-        this._msnry = new Masonry(this._elem, this.options);
+        this._msnry = new masonry(this._elem, this.options);
 
         // console.log(this._msnry);
     }

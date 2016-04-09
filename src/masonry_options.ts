@@ -2,7 +2,7 @@
  * MasonryOptions
  */
 export class MasonryOptions {
-    itemSelector: string = '.brick';
+    itemSelector: string;
     columnWidth: number;
     gutter: number;
     percentPosition: boolean;
@@ -11,7 +11,7 @@ export class MasonryOptions {
     originLeft: boolean;
     originTop: boolean;
     containerStyle: string;
-    transitionDuration: string = '0.4s';
+    transitionDuration: string;
     resize: boolean;
     initLayout: boolean;
 }

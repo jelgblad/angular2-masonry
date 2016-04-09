@@ -2,8 +2,10 @@
   "name": "angular2-masonry",
   "version": "0.0.9",
   "description": "Angular2 component for https://github.com/desandro/masonry",
+  "main": "angular2-masonry.js",
   "dependencies": {
-    "angular2": "^2.0.0-beta.13"
+    "angular2": "^2.0.0-beta.13",
+    "masonry-layout": "^4.0.0"
   },
   "devDependencies": {
     "typescript": "^1.8.9"
