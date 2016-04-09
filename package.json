@@ -12,7 +12,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "tsc -w",
     "tsc": "tsc",
-    "tsc:w": "tsc -w"
+    "tsc:w": "tsc -w",
+    "link": "npm link && cd demo && npm link angular2-masonry"
   },
   "typings": "./angular2-masonry.d.ts",
   "repository": {
