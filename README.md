@@ -17,14 +17,14 @@
   },
   map: {
     "angular2-masonry": "node_modules/angular2-masonry" 
-  },
-  paths:{
-    "masonry": "node_modules/masonry-layout/dist/masonry.pkgd.min.js"
   }
   ```
-  
-3. Use in your component:
-  
+3. Include masonry in HTML:
+    ```html
+    <script src="node_modules/masonry-layout/dist/masonry.pkgd.min.js"></script>
+    ```
+
+4. Use in your component:
   ```javascript
   import { AngularMasonry } from 'angular2-masonry/angular2-masonry';
   ```
