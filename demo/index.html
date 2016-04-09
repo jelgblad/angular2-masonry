@@ -19,13 +19,19 @@
     <!-- 2. Configure SystemJS -->
     <script>
         System.config({
-        paths: {
-             'demo': 'demo.js',
-             'angular2-masonry': 'angular2-masonry.js'
+        packages: {        
+          app: {
+            format: 'register',
+            defaultExtension: 'js'
+          },
+          "angular2-masonry": { "defaultExtension": "js" }
+        },
+        map: {
+            "angular2-masonry": "node_modules/angular2-masonry" 
         }
       });
       
-      System.import('demo').then(null, console.error.bind(console));
+      System.import('app/main').then(null, console.error.bind(console));
     </script>
 
     <style>

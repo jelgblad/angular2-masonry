@@ -6,22 +6,13 @@
     "angular2": "^2.0.0-beta.13"
   },
   "devDependencies": {
-    "typescript": "^1.8.9",
-    "systemjs": "0.19.25",
-    "es6-shim": "^0.35.0",
-    "reflect-metadata": "0.1.2",
-    "rxjs": "5.0.0-beta.2",
-    "zone.js": "0.6.6",
-    "concurrently": "^2.0.0",
-    "lite-server": "^2.1.0"
+    "typescript": "^1.8.9"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently \"npm run tsc:w\" \"npm run lite\" ",
-    "build": "tsc",
+    "start": "tsc -w",
     "tsc": "tsc",
-    "tsc:w": "tsc -w",
-    "lite": "lite-server"
+    "tsc:w": "tsc -w"
   },
   "typings": "./angular2-masonry.d.ts",
   "repository": {

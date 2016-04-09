@@ -1,7 +1,7 @@
 import {Component} from 'angular2/core';
 import {bootstrap} from 'angular2/platform/browser';
 
-import { AngularMasonry } from 'angular2-masonry';
+import { AngularMasonry } from 'angular2-masonry/angular2-masonry';
 
 @Component({
     selector: 'my-app',
