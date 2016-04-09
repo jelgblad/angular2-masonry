@@ -1,37 +1,37 @@
 {
-    "name": "angular2-masonry",
-    "version": "0.0.10",
-    "description": "Angular2 component for https://github.com/desandro/masonry",
-    "main": "angular2-masonry.js",
-    "dependencies": {
-        "masonry-layout": "^4.0.0"
-    },
-    "devDependencies": {
-        "typescript": "^1.8.9",
-        "angular2": "^2.0.0-beta.13"
-    },
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "tsc -w",
-        "tsc": "tsc",
-        "tsc:w": "tsc -w",
-        "link": "npm link && cd demo && npm link angular2-masonry"
-    },
-    "typings": "./angular2-masonry.d.ts",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/jelgblad/angular2-masonry.git"
-    },
-    "keywords": [
-        "angular2",
-        "component",
-        "desandro",
-        "masonry"
-    ],
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/jelgblad/angular2-masonry/issues"
-    },
-    "homepage": "https://github.com/jelgblad/angular2-masonry#readme"
+  "name": "angular2-masonry",
+  "version": "0.0.11",
+  "description": "Angular2 component for https://github.com/desandro/masonry",
+  "main": "angular2-masonry.js",
+  "dependencies": {
+    "masonry-layout": "^4.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^1.8.9",
+    "angular2": "^2.0.0-beta.13"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc -w",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "link": "npm link && cd demo && npm link angular2-masonry"
+  },
+  "typings": "./angular2-masonry.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jelgblad/angular2-masonry.git"
+  },
+  "keywords": [
+    "angular2",
+    "component",
+    "desandro",
+    "masonry"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jelgblad/angular2-masonry/issues"
+  },
+  "homepage": "https://github.com/jelgblad/angular2-masonry#readme"
 }
