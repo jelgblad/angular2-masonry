@@ -4,7 +4,7 @@
 > Feel free to install and try it out, but depend on it at your own risk.
 
 ## Installation
-
+  
 1. Install package:
   * Through npm: `npm install angular2-masonry --save`
 
@@ -23,24 +23,23 @@
     ```html
     <script src="node_modules/masonry-layout/dist/masonry.pkgd.min.js"></script>
     ```
-
 4. Use in your component:
   ```javascript
-  import { AngularMasonry } from 'angular2-masonry/angular2-masonry';
+  import { MASONRY_DIRECTIVES } from 'angular2-masonry/angular2-masonry';
   ```
   
-  Add `AngularMasonry` to @Component's directives-array and use `<masonry>` in your template:
+  Add `MASONRY_DIRECTIVES` to @Component's directives-array and use `<masonry>` and `<masonry-brick>` in your template:
   
   ```javascript
   @Component({
     selector: 'my-component',
-    directives: [AngularMasonry],
+    directives: [MASONRY_DIRECTIVES],
     template: `
       <masonry>
-        <div class="brick">Brick 1</div>
-        <div class="brick">Brick 2</div>
-        <div class="brick">Brick 3</div>
-        <div class="brick">Brick 4</div>
+        <masonry-brick class="brick">Brick 1</masonry-brick>
+        <masonry-brick class="brick">Brick 2</masonry-brick>
+        <masonry-brick class="brick">Brick 3</masonry-brick>
+        <masonry-brick class="brick">Brick 4</masonry-brick>
       </masonry>
     `,
     styles: [`
@@ -54,7 +53,7 @@
 Read about Masonry options here: http://masonry.desandro.com/options.html
 
 #### Options
-The `options`-property takes an object with the following properties:
+The `options`-attribute takes an object with the following properties:
 * itemSelector: string;
 * columnWidth: number;
 * gutter: number;

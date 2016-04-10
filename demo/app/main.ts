@@ -1,11 +1,11 @@
 import {Component} from 'angular2/core';
 import {bootstrap} from 'angular2/platform/browser';
 
-import { AngularMasonry } from 'angular2-masonry/angular2-masonry';
+import { MASONRY_DIRECTIVES } from 'angular2-masonry/angular2-masonry';
 
 @Component({
     selector: 'my-app',
-    directives: [AngularMasonry],
+    directives: [MASONRY_DIRECTIVES],
     template: `
         <h1>{{title}}</h1>
         
@@ -13,11 +13,13 @@ import { AngularMasonry } from 'angular2-masonry/angular2-masonry';
             <button (click)="addItem()">Add item</button>
             <button (click)="removeRandomItem()">Remove random item</button>
             <button (click)="clearItems()">Clear items</button>
-            <button (click)="masonry.reloadItems()">Reload items</button>
         </div>
         
-        <masonry #masonry [options]="{transitionDuration: '0.6s', itemSelector: '.brick'}">
-            <div class="brick" *ngFor="#brick of bricks">{{brick}}</div>
+        <masonry [options]="{transitionDuration: '0.8s', itemSelector: '.brick'}">
+            <masonry-brick class="brick" *ngFor="#brick of bricks">
+                <img *ngIf="brick.image" src="{{brick.image}}" />
+                <p *ngIf="brick.text">{{brick.text}}</p>
+            </masonry-brick>
         </masonry>
         `
 })
@@ -32,9 +34,9 @@ export class AppComponent {
     }
 
     addItem() {
-        var index = Math.floor(Math.random() * (loremIpsum.length - 1));
+        var index = Math.floor(Math.random() * (lorem.length - 1));
 
-        this.bricks.push(loremIpsum[index]);
+        this.bricks.push(lorem[index]);
     }
 
     removeRandomItem() {
@@ -51,16 +53,23 @@ export class AppComponent {
 bootstrap(AppComponent);
 
 
-// Text
-var loremIpsum = [
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec venenatis eros. Maecenas sollicitudin pharetra orci quis mattis. Morbi non.',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pharetra blandit ultricies. Quisque at dapibus elit. Nullam pharetra lorem et.',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ipsum tortor, pellentesque quis feugiat et, lacinia sit amet lorem. Morbi pulvinar diam fermentum urna elementum, eu mollis urna rutrum. Donec vel neque malesuada, porta erat et, laoreet turpis. Curabitur vel porta elit, sed molestie elit. Phasellus scelerisque scelerisque lectus, sed.',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo neque tempor, aliquam odio a, sollicitudin lacus. Morbi ut justo nisi. Quisque convallis, nisl ac gravida semper, nisi turpis maximus felis, non gravida ex mi eu metus. Vestibulum semper venenatis viverra. Nulla volutpat lacinia scelerisque. Nunc efficitur dolor non imperdiet.',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet odio aliquam, egestas urna non, vehicula dui. In at rhoncus erat. Maecenas convallis porta enim et varius. Nulla ut.',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium.',
-    'Lorem ipsum dolor sit amet.',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquam.',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent rutrum metus id faucibus placerat. Sed at fermentum dolor, id ultricies.',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et erat tempus, varius dolor at, congue erat. Donec scelerisque ullamcorper.'
+// Demo content
+var lorem = [
+    { text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec venenatis eros. Maecenas sollicitudin pharetra orci quis mattis. Morbi non.' },
+    { text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pharetra blandit ultricies. Quisque at dapibus elit. Nullam pharetra lorem et.' },
+    { text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ipsum tortor, pellentesque quis feugiat et, lacinia sit amet lorem. Morbi pulvinar diam fermentum urna elementum, eu mollis urna rutrum. Donec vel neque malesuada, porta erat et, laoreet turpis. Curabitur vel porta elit, sed molestie elit. Phasellus scelerisque scelerisque lectus, sed.' },
+    { text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo neque tempor, aliquam odio a, sollicitudin lacus. Morbi ut justo nisi. Quisque convallis, nisl ac gravida semper, nisi turpis maximus felis, non gravida ex mi eu metus. Vestibulum semper venenatis viverra. Nulla volutpat lacinia scelerisque. Nunc efficitur dolor non imperdiet.' },
+    { text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet odio aliquam, egestas urna non, vehicula dui. In at rhoncus erat. Maecenas convallis porta enim et varius. Nulla ut.' },
+    { text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium.' },
+    { text: 'Lorem ipsum dolor sit amet.' },
+    { text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquam.' },
+    { text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent rutrum metus id faucibus placerat. Sed at fermentum dolor, id ultricies.' },
+    { text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et erat tempus, varius dolor at, congue erat. Donec scelerisque ullamcorper.' },
+    { image: 'http://lorempixel.com/250/200/abstract' },
+    { image: 'http://lorempixel.com/250/300/abstract' },
+    { image: 'http://lorempixel.com/250/300/abstract' },
+    { image: 'http://lorempixel.com/250/400/abstract' },
+    { image: 'http://lorempixel.com/250/400/abstract' },
+    { image: 'http://lorempixel.com/250/500/abstract' },
+    { image: 'http://lorempixel.com/250/500/abstract' }
 ]

@@ -1,4 +1,4 @@
-import { Component, Input, ElementRef, AfterViewInit, AfterContentChecked } from 'angular2/core';
+import { Component, Input, ElementRef, AfterViewInit } from 'angular2/core';
 
 // import * as masonry from 'masonry-layout';
 
@@ -8,7 +8,7 @@ import { MasonryOptions } from './masonry_options';
     selector: 'masonry',
     template: '<div><ng-content></ng-content></div>'
 })
-export class AngularMasonry implements AfterViewInit, AfterContentChecked {
+export class AngularMasonry implements AfterViewInit {
 
     constructor(
         private _componentElement: ElementRef
@@ -16,51 +16,46 @@ export class AngularMasonry implements AfterViewInit, AfterContentChecked {
 
     private _elem = null;
     private _msnry = null;
-    private _itemCount: number;
 
     @Input() public options: MasonryOptions;
-    @Input('reload') autoReload: boolean = true;
 
     ngAfterViewInit() {
-        
-        // console.log(masonry);
-        
-        this._elem = this._componentElement.nativeElement.children[0];
-        this._msnry = new Masonry(this._elem, this.options);
 
+        // console.log(masonry);
+
+        // Reference to the Masonry-div
+        this._elem = this._componentElement.nativeElement.children[0];
+
+        // Initialize Masonry
+        this._msnry = new Masonry(this._elem, this.options);
+        
+         console.log('AngularMasonry:','Initialized');
+        
         // console.log(this._msnry);
     }
 
-    ngAfterContentChecked() {
-        // Is auto reload enabled?
-        if (this.autoReload === true) {
+    public add(element, prepend: boolean = false) {
+        // Tell Masonry that a child element has been added
 
-            // Is component initialized?
-            if (this._elem && this._msnry) {
-
-                // Get number of childen in DOM element
-                let count = this._elem.children.length;
-
-                // Has items changed?
-                if (count !== this._itemCount) {
-
-                    // Get itemCount
-                    this._itemCount = count;
-
-                    // Reload items
-                    this.reloadItems();
-                }
-            }
+        if (prepend) {
+            this._msnry.prepend(element);
         }
+        else {
+            this._msnry.appended(element);
+        }
+
+        // Layout items
+        this._msnry.layout();
     }
 
-    // Reload layout
-    public reloadItems() {
-
-        // Reload and layout Masonry
-        this._msnry.reloadItems();
-        this._msnry.layout();
-
-        console.log('AngularMasonry: reloadItems');
+    public remove(element) {
+        // Tell Masonry that a child element has been removed
+        this._msnry.remove(element);
+        
+        // Hack...
+        setTimeout(x => {
+            // Layout items
+            this._msnry.layout();
+        });
     }
 }
