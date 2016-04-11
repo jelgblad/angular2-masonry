@@ -1,7 +1,7 @@
 import {Component} from 'angular2/core';
 import {bootstrap} from 'angular2/platform/browser';
 
-import { MASONRY_DIRECTIVES } from 'angular2-masonry/angular2-masonry';
+import { MASONRY_DIRECTIVES } from 'angular2-masonry';
 
 @Component({
     selector: 'my-app',
@@ -15,7 +15,7 @@ import { MASONRY_DIRECTIVES } from 'angular2-masonry/angular2-masonry';
             <button (click)="clearItems()">Clear items</button>
         </div>
         
-        <masonry [options]="{transitionDuration: '0.8s', itemSelector: '.brick'}">
+        <masonry [options]="{transitionDuration: '0.8s'}">
             <masonry-brick class="brick" *ngFor="#brick of bricks">
                 <img *ngIf="brick.image" src="{{brick.image}}" />
                 <p *ngIf="brick.text">{{brick.text}}</p>

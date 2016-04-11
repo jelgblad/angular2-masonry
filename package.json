@@ -1,6 +1,6 @@
 {
   "name": "angular2-masonry",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "Angular2 component for https://github.com/desandro/masonry",
   "main": "angular2-masonry.js",
   "dependencies": {
@@ -12,6 +12,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "tsc",
     "start": "tsc -w",
     "tsc": "tsc",
     "tsc:w": "tsc -w",

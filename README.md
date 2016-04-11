@@ -9,12 +9,13 @@
 
 1. Install package:
  * Through npm: `npm install angular2-masonry --save`
+ 
 2. Configure module loader:
  * SystemJS:
  Add the following to SystemJS config:
  ```json
  packages: {
-   "angular2-masonry": { "defaultExtension": "js" }
+   "angular2-masonry": { "defaultExtension": "js", "main": "angular2-masonry.js" }
  },
  map: {
    "angular2-masonry": "node_modules/angular2-masonry" 
@@ -28,7 +29,7 @@
 
 4. Use in your component:
  ```javascript
- import { MASONRY_DIRECTIVES } from 'angular2-masonry/angular2-masonry';
+ import { MASONRY_DIRECTIVES } from 'angular2-masonry';
  ```
   
  Add `MASONRY_DIRECTIVES` to @Component's directives-array and use `<masonry>` and `<masonry-brick>` in your template:
@@ -93,3 +94,8 @@ public myOptions = {
 ```html
 <masonry [options]="myOptions"></masonry>
 ```
+
+## Styling
+
+* Set the container class with `container-class` attribute
+* Set the container style with `container-style` attribute
