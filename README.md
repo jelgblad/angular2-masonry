@@ -1,5 +1,7 @@
 # Angular2 component for [Masonry](https://github.com/desandro/masonry)
 
+[![npm version](https://badge.fury.io/js/angular2-masonry.svg)](https://www.npmjs.com/package/angular2-masonry)
+
 > angular2-masonry is in development and **not ready for production use**.
 > Feel free to install and try it out, but depend on it at your own risk.
 
