@@ -8,51 +8,48 @@
 ## Installation
 
 1. Install package:
+ * Through npm: `npm install angular2-masonry --save`
 2. Configure module loader:
-3. Include Masonry in HTML:
-4. Use in your component:
+ * SystemJS:
+ Add the following to SystemJS config:
+ ```json
+ packages: {
+   "angular2-masonry": { "defaultExtension": "js" }
+ },
+ map: {
+   "angular2-masonry": "node_modules/angular2-masonry" 
+ }
+ ```
+3. Include Masonry in HTML: 
 
-
-1. Install package:
-  * Through npm: `npm install angular2-masonry --save`
-
-2. Configure module loader:
-  * SystemJS:
-  Add the following to SystemJS config:
-  ```json
-  packages: {
-    "angular2-masonry": { "defaultExtension": "js" }
-  },
-  map: {
-    "angular2-masonry": "node_modules/angular2-masonry" 
-  }
-  ```
-3. Include masonry in HTML:
+ ```html
+ <script src="node_modules/masonry-layout/dist/masonry.pkgd.min.js"></script>
+ ```
 
 4. Use in your component:
-  ```javascript
-  import { MASONRY_DIRECTIVES } from 'angular2-masonry/angular2-masonry';
-  ```
+ ```javascript
+ import { MASONRY_DIRECTIVES } from 'angular2-masonry/angular2-masonry';
+ ```
   
-  Add `MASONRY_DIRECTIVES` to @Component's directives-array and use `<masonry>` and `<masonry-brick>` in your template:
+ Add `MASONRY_DIRECTIVES` to @Component's directives-array and use `<masonry>` and `<masonry-brick>` in your template:
   
-  ```javascript
-  @Component({
-    selector: 'my-component',
-    directives: [MASONRY_DIRECTIVES],
-    template: `
-      <masonry>
-        <masonry-brick class="brick">Brick 1</masonry-brick>
-        <masonry-brick class="brick">Brick 2</masonry-brick>
-        <masonry-brick class="brick">Brick 3</masonry-brick>
-        <masonry-brick class="brick">Brick 4</masonry-brick>
-      </masonry>
-    `,
-    styles: [`
-      .brick { width: 200px; }
-    `]
-  })
-  ```
+ ```javascript
+ @Component({
+   selector: 'my-component',
+   directives: [MASONRY_DIRECTIVES],
+   template: `
+     <masonry>
+       <masonry-brick class="brick">Brick 1</masonry-brick>
+       <masonry-brick class="brick">Brick 2</masonry-brick>
+       <masonry-brick class="brick">Brick 3</masonry-brick>
+       <masonry-brick class="brick">Brick 4</masonry-brick>
+     </masonry>
+     `,
+     styles: [`
+       .brick { width: 200px; }
+     `]
+ })
+ ```
  
 ## Configuration
 
