@@ -6,7 +6,13 @@
 > Feel free to install and try it out, but depend on it at your own risk.
 
 ## Installation
-  
+
+1. Install package:
+2. Configure module loader:
+3. Include Masonry in HTML:
+4. Use in your component:
+
+
 1. Install package:
   * Through npm: `npm install angular2-masonry --save`
 
@@ -22,9 +28,7 @@
   }
   ```
 3. Include masonry in HTML:
-    ```html
-    <script src="node_modules/masonry-layout/dist/masonry.pkgd.min.js"></script>
-    ```
+
 4. Use in your component:
   ```javascript
   import { MASONRY_DIRECTIVES } from 'angular2-masonry/angular2-masonry';
