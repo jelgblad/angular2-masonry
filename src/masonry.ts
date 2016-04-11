@@ -1,4 +1,4 @@
-import { Component, Input, ElementRef, AfterViewInit } from 'angular2/core';
+import { Component, Input, ElementRef, OnInit } from 'angular2/core';
 
 // import * as masonry from 'masonry-layout';
 
@@ -8,7 +8,7 @@ import { MasonryOptions } from './masonry_options';
     selector: 'masonry',
     template: '<div><ng-content></ng-content></div>'
 })
-export class AngularMasonry implements AfterViewInit {
+export class AngularMasonry implements OnInit {
 
     constructor(
         private _componentElement: ElementRef
@@ -19,7 +19,7 @@ export class AngularMasonry implements AfterViewInit {
 
     @Input() public options: MasonryOptions;
 
-    ngAfterViewInit() {
+    ngOnInit() {
 
         // console.log(masonry);
 
