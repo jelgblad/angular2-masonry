@@ -75,13 +75,13 @@ The `options`-attribute takes an object with the following properties:
 
 Inline object:
 ```html
-<masonry [options]="{ itemSelector: '.card', transitionDuration: '0.8s' }"></masonry>
+<masonry [options]="{ transitionDuration: '0.8s' }"></masonry>
 ```
 
 From parent component:
 ```javascript
 // Typescript:
-import { MasonryOptions } from 'angular2-masonry/angular2-masonry';
+import { MasonryOptions } from 'angular2-masonry';
 public myOptions: MasonryOptions = new MasonryOptions();
 
 this.myOptions.transitionDuration = '0.8s';
@@ -94,8 +94,3 @@ public myOptions = {
 ```html
 <masonry [options]="myOptions"></masonry>
 ```
-
-## Styling
-
-* Set the container class with `container-class` attribute
-* Set the container style with `container-style` attribute
