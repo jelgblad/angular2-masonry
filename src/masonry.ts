@@ -6,39 +6,30 @@ import { MasonryOptions } from './masonry_options';
 
 @Component({
     selector: 'masonry',
-    template: '<div class="{{containerClass}}" style="{{containerStyle}}"><ng-content></ng-content></div>'
+    template: '<ng-content></ng-content>'
 })
 export class AngularMasonry implements OnInit {
 
     constructor(
-        private _componentElement: ElementRef
+        private _element: ElementRef
     ) { }
 
-    private _elem = null;
     private _msnry = null;
 
     @Input() public options: MasonryOptions;
-    @Input('container-style') public containerStyle: string = 'position: relative;';
-    @Input('container-class') public containerClass: string = '';
 
     ngOnInit() {
-
-        // console.log(masonry);
-
-        // Reference to the Masonry-div
-        this._elem = this._componentElement.nativeElement.children[0];
+        // Set element display to block
+        this._element.nativeElement.style.display = 'block';
 
         // Initialize Masonry
-        this._msnry = new Masonry(this._elem, this.options);
+        this._msnry = new Masonry(this._element.nativeElement, this.options);
 
         console.log('AngularMasonry:', 'Initialized');
-
-        // console.log(this._msnry);
     }
 
     public add(element, prepend: boolean = false) {
         // Tell Masonry that a child element has been added
-
         if (prepend) {
             this._msnry.prepend(element);
         }
@@ -54,7 +45,6 @@ export class AngularMasonry implements OnInit {
         // Tell Masonry that a child element has been removed
         this._msnry.remove(element);
 
-        // Hack...
         setTimeout(x => {
             // Layout items
             this._msnry.layout();
