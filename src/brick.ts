@@ -27,13 +27,9 @@ export class AngularMasonryBrick implements OnInit, OnDestroy, AfterViewInit {
         // });
 
         this._parent.add(this._componentElement.nativeElement);
-
-        console.log('AngularMasonry:', 'Brick added');
     }
 
     ngOnDestroy() {
         this._parent.remove(this._componentElement.nativeElement);
-
-        console.log('AngularMasonry:', 'Brick removed');
     }
 }
