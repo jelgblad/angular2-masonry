@@ -12,7 +12,7 @@ import { AngularMasonry } from './masonry';
 export class AngularMasonryBrick implements OnInit, OnDestroy, AfterViewInit {
 
     constructor(
-        private _componentElement: ElementRef,
+        private _element: ElementRef,
         @Inject(forwardRef(() => AngularMasonry)) private _parent: AngularMasonry
     ) { }
 
@@ -22,14 +22,14 @@ export class AngularMasonryBrick implements OnInit, OnDestroy, AfterViewInit {
 
     ngAfterViewInit() {
 
-        // imagesLoaded(this._componentElement.nativeElement, function(instance) {
+        // imagesLoaded(this._element.nativeElement, function(instance) {
         //     console.log('all images are loaded');
         // });
 
-        this._parent.add(this._componentElement.nativeElement);
+        this._parent.add(this._element.nativeElement);
     }
 
     ngOnDestroy() {
-        this._parent.remove(this._componentElement.nativeElement);
+        this._parent.remove(this._element.nativeElement);
     }
 }
