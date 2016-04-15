@@ -33,7 +33,7 @@ export class AngularMasonry implements OnInit {
         // Initialize Masonry
         this._msnry = new Masonry(this._element.nativeElement, this.options);
         
-        console.log('AngularMasonry:', 'Initialized');
+        // console.log('AngularMasonry:', 'Initialized');
     }
 
     public layout() {
@@ -41,7 +41,7 @@ export class AngularMasonry implements OnInit {
             this._msnry.layout();
         });
 
-        console.log('AngularMasonry:', 'Layout');
+        // console.log('AngularMasonry:', 'Layout');
     }
 
     public add(element, prepend: boolean = false) {
@@ -56,7 +56,7 @@ export class AngularMasonry implements OnInit {
         // Layout items
         this.layout();
 
-        console.log('AngularMasonry:', 'Brick added');
+        // console.log('AngularMasonry:', 'Brick added');
     }
 
     public remove(element) {
@@ -66,6 +66,6 @@ export class AngularMasonry implements OnInit {
         // Layout items
         this.layout();
 
-        console.log('AngularMasonry:', 'Brick removed');
+        // console.log('AngularMasonry:', 'Brick removed');
     }
 }
