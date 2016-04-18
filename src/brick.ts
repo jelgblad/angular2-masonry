@@ -1,24 +1,16 @@
-import { Component, Inject, Input, ElementRef, forwardRef, OnInit, OnDestroy, AfterViewInit } from 'angular2/core';
+import { Directive, Inject, ElementRef, forwardRef, OnDestroy, AfterViewInit } from 'angular2/core';
 
 import { AngularMasonry } from './masonry';
 
-@Component({
-    selector: 'masonry-brick',
-    template: '<ng-content></ng-content>',
-    styles: [`
-        .root { display: block; }
-    `]
+@Directive({
+    selector: '[masonry-brick], masonry-brick'
 })
-export class AngularMasonryBrick implements OnInit, OnDestroy, AfterViewInit {
+export class AngularMasonryBrick implements OnDestroy, AfterViewInit {
 
     constructor(
         private _element: ElementRef,
         @Inject(forwardRef(() => AngularMasonry)) private _parent: AngularMasonry
     ) { }
-
-    ngOnInit() {
-
-    }
 
     ngAfterViewInit() {
 

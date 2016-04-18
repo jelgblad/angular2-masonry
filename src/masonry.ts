@@ -5,7 +5,7 @@ import { Component, Input, ElementRef, OnInit } from 'angular2/core';
 import { MasonryOptions } from './masonry_options';
 
 @Component({
-    selector: 'masonry',
+    selector: '[masonry], masonry',
     template: '<ng-content></ng-content>'
 })
 export class AngularMasonry implements OnInit {
@@ -21,18 +21,20 @@ export class AngularMasonry implements OnInit {
     ngOnInit() {
         // Create masonry options if not supplied
         if (!this.options) this.options = new MasonryOptions();
-        
+
         // Set default itemSelector to 'masonry-brick'
         if (!this.options.itemSelector) {
-            this.options.itemSelector = 'masonry-brick';
+            this.options.itemSelector = '[masonry-brick], masonry-brick';
         }
 
         // Set element display to block
-        this._element.nativeElement.style.display = 'block';
+        if (this._element.nativeElement.tagName === 'MASONRY') {
+            this._element.nativeElement.style.display = 'block';
+        }
 
         // Initialize Masonry
         this._msnry = new Masonry(this._element.nativeElement, this.options);
-        
+
         // console.log('AngularMasonry:', 'Initialized');
     }
 
