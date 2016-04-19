@@ -7,27 +7,28 @@
 
 ## Installation
 
-1. Install package:
+Install package:
  * Through npm: `npm install angular2-masonry --save`
  
-2. Configure module loader:
+Configure module loader:
  * SystemJS:
  Add the following to SystemJS config:
  ```json
  packages: {
-   "angular2-masonry": { "defaultExtension": "js", "main": "angular2-masonry.js" }
+   "angular2-masonry": { "defaultExtension": "js", "main": "angular2-masonry" }
  },
  map: {
    "angular2-masonry": "node_modules/angular2-masonry" 
  }
  ```
-3. Include Masonry in HTML: 
+ 
+Include Masonry in HTML: 
 
- ```html
- <script src="node_modules/masonry-layout/dist/masonry.pkgd.min.js"></script>
- ```
+```html
+<script src="node_modules/masonry-layout/dist/masonry.pkgd.min.js"></script>
+```
 
-4. Use in your component:
+Use in your component:
  ```javascript
  import { MASONRY_DIRECTIVES } from 'angular2-masonry';
  ```
@@ -80,13 +81,14 @@ Inline object:
 
 From parent component:
 ```javascript
-// Typescript:
+// Typescript interface:
 import { MasonryOptions } from 'angular2-masonry';
-public myOptions: MasonryOptions = new MasonryOptions();
 
-this.myOptions.transitionDuration = '0.8s';
+public myOptions: MasonryOptions = { 
+  transitionDuration: '0.8s' 
+};
 
-// Basic Object:
+// Basic object:
 public myOptions = {
    transitionDuration: '0.8s'
 };

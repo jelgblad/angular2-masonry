@@ -19,10 +19,10 @@ export class AngularMasonry implements OnInit {
     @Input() public options: MasonryOptions;
 
     ngOnInit() {
-        // Create masonry options if not supplied
-        if (!this.options) this.options = new MasonryOptions();
+        // Create masonry options object
+        if (!this.options) this.options = {};
 
-        // Set default itemSelector to 'masonry-brick'
+        // Set default itemSelector
         if (!this.options.itemSelector) {
             this.options.itemSelector = '[masonry-brick], masonry-brick';
         }
