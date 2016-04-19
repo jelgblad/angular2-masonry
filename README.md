@@ -11,16 +11,15 @@ Install package:
  * Through npm: `npm install angular2-masonry --save`
  
 Configure module loader:
- * SystemJS:
- Add the following to SystemJS config:
- ```json
- packages: {
-   "angular2-masonry": { "defaultExtension": "js", "main": "angular2-masonry" }
- },
- map: {
-   "angular2-masonry": "node_modules/angular2-masonry" 
- }
- ```
+ * SystemJS: Add the following to SystemJS config:
+```json
+packages: {
+  "angular2-masonry": { "defaultExtension": "js", "main": "angular2-masonry" }
+},
+map: {
+  "angular2-masonry": "node_modules/angular2-masonry" 
+}
+```
  
 Include Masonry in HTML: 
 
