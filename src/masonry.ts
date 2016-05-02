@@ -1,6 +1,6 @@
 import { Component, Input, ElementRef, OnInit } from 'angular2/core';
 
-// import * as masonry from 'masonry-layout';
+import * as masonry from 'masonry-layout';
 
 import { MasonryOptions } from './masonry_options';
 
@@ -31,9 +31,10 @@ export class AngularMasonry implements OnInit {
         if (this._element.nativeElement.tagName === 'MASONRY') {
             this._element.nativeElement.style.display = 'block';
         }
-
+        
         // Initialize Masonry
-        this._msnry = new Masonry(this._element.nativeElement, this.options);
+        this._msnry = new masonry.default(this._element.nativeElement, this.options);
+        // this._msnry = new Masonry(this._element.nativeElement, this.options);
 
         // console.log('AngularMasonry:', 'Initialized');
     }

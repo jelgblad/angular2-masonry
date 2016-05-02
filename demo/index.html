@@ -29,9 +29,9 @@
         map: {
             "angular2-masonry": "node_modules/angular2-masonry" 
         }
-        // , paths:{
-       //     "masonry-layout": "node_modules/masonry-layout/dist/masonry.pkgd.js"
-        // }
+        , paths:{
+           "masonry-layout": "node_modules/masonry-layout/dist/masonry.pkgd.js"
+        }
       });
 
       System.import('app/main').then(null, console.error.bind(console));
@@ -65,7 +65,8 @@
 <body>
     <my-app>Loading...</my-app>
 
-    <script src="node_modules/masonry-layout/dist/masonry.pkgd.min.js"></script>
+    <!--<script src="node_modules/masonry-layout/dist/masonry.pkgd.min.js"></script>-->
+    <!--<script src="node_modules/masonry-layout/masonry.js"></script>-->
     <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
 </body>
 
