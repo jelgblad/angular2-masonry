@@ -1,5 +1,5 @@
-import {Component} from 'angular2/core';
-import {bootstrap} from 'angular2/platform/browser';
+import {Component} from '@angular/core';
+import {bootstrap} from '@angular/platform-browser-dynamic';
 
 import { MASONRY_DIRECTIVES } from 'angular2-masonry';
 
@@ -16,7 +16,7 @@ import { MASONRY_DIRECTIVES } from 'angular2-masonry';
         </div>
         
         <masonry [options]="{transitionDuration: '0.8s'}">
-            <masonry-brick class="brick" *ngFor="#brick of bricks">
+            <masonry-brick class="brick" *ngFor="let brick of bricks">
                 <img *ngIf="brick.image" src="{{brick.image}}" />
                 <p *ngIf="brick.text">{{brick.text}}</p>
             </masonry-brick>

@@ -1,4 +1,4 @@
-import { Directive, Inject, ElementRef, forwardRef, OnDestroy, AfterViewInit } from 'angular2/core';
+import { Directive, Inject, ElementRef, forwardRef, OnDestroy, AfterViewInit } from '@angular/core';
 
 import { AngularMasonry } from './masonry';
 

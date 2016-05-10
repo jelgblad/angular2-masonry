@@ -1,4 +1,4 @@
-import { Component, Input, ElementRef, OnInit } from 'angular2/core';
+import { Component, Input, ElementRef, OnInit } from '@angular/core';
 
 import * as masonry from 'masonry-layout';
 
