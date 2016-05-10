@@ -14,7 +14,7 @@ Configure module loader:
  * SystemJS: Add the following to SystemJS config:
 ```json
 packages: {
-  "angular2-masonry": { "defaultExtension": "js", "main": "angular2-masonry" }
+  "angular2-masonry": { "defaultExtension": "js", "main": "index" }
 },
 map: {
   "angular2-masonry": "node_modules/angular2-masonry" 
