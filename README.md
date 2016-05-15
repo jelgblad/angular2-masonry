@@ -19,6 +19,9 @@ packages: {
 map: {
   "angular2-masonry": "node_modules/angular2-masonry" 
 }
+paths:{
+  "masonry-layout": "node_modules/masonry-layout/dist/masonry.pkgd.js"
+}
 ```
  
 Include Masonry in HTML: 

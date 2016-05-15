@@ -9,5 +9,6 @@ Thumbs.db
 
 # Ignored files
 *.js
+!config.js
 *.map
 *.d.ts
