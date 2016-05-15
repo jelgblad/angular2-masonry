@@ -23,12 +23,6 @@ paths:{
   "masonry-layout": "node_modules/masonry-layout/dist/masonry.pkgd.js"
 }
 ```
- 
-Include Masonry in HTML: 
-
-```html
-<script src="node_modules/masonry-layout/dist/masonry.pkgd.min.js"></script>
-```
 
 Use in your component:
  ```javascript
