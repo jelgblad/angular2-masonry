@@ -49,6 +49,9 @@ Use in your component:
  })
  ```
  
+## Installation
+
+
  ## Installation for [Angular 2 CLI](https://github.com/angular/angular-cli)
  
 Install package:
