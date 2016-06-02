@@ -57,7 +57,8 @@ Install package:
  
 Configure the module loader:
 * SystemJS `src->system-config.ts`: Add the following to SystemJS Config
-```
+
+```javascript
 const map: any = {
   "angular2-masonry": "vendor/angular2-masonry" 
 }
