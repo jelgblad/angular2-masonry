@@ -52,6 +52,7 @@ Use in your component:
  ## Installation for [Angular 2 CLI](https://github.com/angular/angular-cli)
  
 Install package:
+
  * Through npm: `npm install angular2-masonry --save`
  
 Configure the module loader:
