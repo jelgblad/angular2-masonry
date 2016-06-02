@@ -57,7 +57,7 @@ Install package:
  
 Configure the module loader:
 * SystemJS `src->system-config.ts`: Add the following to SystemJS Config
-```json
+```
 const map: any = {
   "angular2-masonry": "vendor/angular2-masonry" 
 }
@@ -67,7 +67,9 @@ const packages: any = {
 const paths: any = {
   "masonry-layout": "vendor/masonry-layout/dist/masonry.pkgd.js"
 }
-.......
+
+...
+
 System.config({ map, packages, paths });
 ```
 
