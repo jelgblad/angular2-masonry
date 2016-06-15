@@ -18,7 +18,7 @@
     "tsc:w": "tsc -w",
     "link": "npm link && cd demo && npm link angular2-masonry"
   },
-  "typings": "./angular2-masonry.d.ts",
+  "typings": "./index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jelgblad/angular2-masonry.git"
