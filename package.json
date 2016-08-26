@@ -7,16 +7,15 @@
     "masonry-layout": "^4.0.0"
   },
   "devDependencies": {
-    "typescript": "^1.8.9",
-    "@angular/common": "2.0.0-rc.1",
-    "@angular/core": "2.0.0-rc.1"
+    "@angular/common": "^2.0.0-rc.5",
+    "@angular/core": "2.0.0-rc.5",
+    "typescript": "^1.8.10"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "tsc -w",
+    "dev": "tsc -w",
     "tsc": "tsc",
-    "tsc:w": "tsc -w",
-    "link": "npm link && cd demo && npm link angular2-masonry"
+    "tsc:w": "tsc -w"
   },
   "typings": "./index.d.ts",
   "repository": {

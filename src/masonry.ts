@@ -33,8 +33,7 @@ export class AngularMasonry implements OnInit {
         }
         
         // Initialize Masonry
-        this._msnry = new masonry.default(this._element.nativeElement, this.options);
-        // this._msnry = new Masonry(this._element.nativeElement, this.options);
+        this._msnry = new masonry(this._element.nativeElement, this.options);
 
         // console.log('AngularMasonry:', 'Initialized');
     }
