@@ -4,7 +4,7 @@
   "description": "Angular2 component for https://github.com/desandro/masonry",
   "main": "angular2-masonry.js",
   "dependencies": {
-    "masonry-layout": "^4.0.0"
+    "masonry-layout": "^4.1.1"
   },
   "devDependencies": {
     "@angular/common": "^2.0.0-rc.5",

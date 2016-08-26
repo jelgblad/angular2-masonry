@@ -1,8 +1,9 @@
 import { Component, Input, ElementRef, OnInit } from '@angular/core';
 
-import * as masonry from 'masonry-layout';
+// import * as masonry from 'masonry-layout';
+var masonry = require('masonry-layout');
 
-import { MasonryOptions } from './masonry_options';
+import { MasonryOptions } from './masonry-options';
 
 @Component({
     selector: '[masonry], masonry',
