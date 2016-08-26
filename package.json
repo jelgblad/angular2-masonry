@@ -1,6 +1,6 @@
 {
   "name": "angular2-masonry",
-  "version": "0.0.20",
+  "version": "0.1.0",
   "description": "Angular2 component for https://github.com/desandro/masonry",
   "main": "angular2-masonry.js",
   "dependencies": {
