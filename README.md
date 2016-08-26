@@ -36,14 +36,42 @@ import { MasonryModule } from 'angular2-masonry';
 })
 ```
 
-### Angular RC 4 and earlier
-Use version 0.0.20 or earlier.
-
-Use `<masonry>` and `<masonry-brick>` in your template:
-  
- ```javascript
+```javascript
  @Component({
    selector: 'my-component',
+   template: `
+     <masonry>
+       <masonry-brick class="brick" *ngFor="let brick of bricks">{{brick.title}}</masonry-brick>
+     </masonry>
+     `,
+     styles: [`
+       .brick { width: 200px; }
+     `]
+ })
+ class MyComponent {
+   bricks = [
+     {title: 'Brick 1'},
+     {title: 'Brick 2'},
+     {title: 'Brick 3'},
+     {title: 'Brick 4'},
+     {title: 'Brick 5'},
+     {title: 'Brick 6'}
+   ]
+ }
+ ```
+
+### Angular RC 4 and earlier
+Use version 0.0.20 or earlier.
+  
+```javascript
+ import { AngularMasonry, AngularMasonryBrick } from 'angular2-masonry';
+ 
+ @Component({
+   selector: 'my-component',
+   directives: [
+    AngularMasonry,
+    AngularMasonryBrick
+   ]
    template: `
      <masonry>
        <masonry-brick class="brick" *ngFor="let brick of bricks">{{brick.title}}</masonry-brick>
