@@ -130,3 +130,6 @@ public myOptions: MasonryOptions = {
 ```html
 <masonry [options]="myOptions"></masonry>
 ```
+
+## Demo
+https://github.com/jelgblad/angular2-masonry-demo
