@@ -1,4 +1,10 @@
-import { Component, Input, ElementRef, OnInit } from '@angular/core';
+import {
+    Component,
+    OnInit,
+    Input,
+    ElementRef,
+    EventEmitter
+} from '@angular/core';
 
 // import * as masonry from 'masonry-layout';
 var masonry = require('masonry-layout');
@@ -17,6 +23,9 @@ export class AngularMasonry implements OnInit {
 
     private _msnry = null;
 
+    public layoutComplete: EventEmitter<any[]>;
+    public removeComplete: EventEmitter<any[]>;
+
     @Input() public options: MasonryOptions;
 
     ngOnInit() {
@@ -32,12 +41,37 @@ export class AngularMasonry implements OnInit {
         if (this._element.nativeElement.tagName === 'MASONRY') {
             this._element.nativeElement.style.display = 'block';
         }
-        
+
         // Initialize Masonry
         this._msnry = new masonry(this._element.nativeElement, this.options);
 
         // console.log('AngularMasonry:', 'Initialized');
+
+        // Create EventEmitters
+        this.layoutComplete = new EventEmitter<any[]>();
+        this.removeComplete = new EventEmitter<any[]>();
+
+        // Bind to events
+        this._msnry.on('layoutComplete', items => {
+            this.layoutComplete.emit(items);
+        });
+        this._msnry.on('removeComplete', items => {
+            this.removeComplete.emit(items);
+        });
     }
+
+    // ngOnDestroy() {
+    //     this._msnry.off('layoutComplete', this.onLayoutComplete);
+    //     this._msnry.off('removeComplete', this.onRemoveComplete);
+    // }
+
+    // private onLayoutComplete(items) {
+    //     this.layoutComplete.emit(items);
+    // }
+
+    // private onRemoveComplete(items) {
+    //     this.removeComplete.emit(items);
+    // }
 
     public layout() {
         setTimeout(() => {
