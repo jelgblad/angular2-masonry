@@ -1,4 +1,11 @@
-import { Directive, Inject, ElementRef, forwardRef, OnDestroy, AfterViewInit } from '@angular/core';
+import {
+    Directive,
+    Inject,
+    ElementRef,
+    forwardRef,
+    OnDestroy,
+    AfterViewInit
+} from '@angular/core';
 
 import { AngularMasonry } from './masonry';
 
@@ -13,11 +20,6 @@ export class AngularMasonryBrick implements OnDestroy, AfterViewInit {
     ) { }
 
     ngAfterViewInit() {
-
-        // imagesLoaded(this._element.nativeElement, function(instance) {
-        //     console.log('all images are loaded');
-        // });
-
         this._parent.add(this._element.nativeElement);
     }
 
