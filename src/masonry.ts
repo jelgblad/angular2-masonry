@@ -1,9 +1,11 @@
 import {
     Component,
     OnInit,
+    OnDestroy,
     Input,
+    Output,
     ElementRef,
-    EventEmitter
+    EventEmitter,
 } from '@angular/core';
 
 // import * as masonry from 'masonry-layout';
@@ -15,7 +17,7 @@ import { MasonryOptions } from './masonry-options';
     selector: '[masonry], masonry',
     template: '<ng-content></ng-content>'
 })
-export class AngularMasonry implements OnInit {
+export class AngularMasonry implements OnInit, OnDestroy {
 
     constructor(
         private _element: ElementRef
@@ -23,10 +25,12 @@ export class AngularMasonry implements OnInit {
 
     private _msnry = null;
 
-    public layoutComplete: EventEmitter<any[]>;
-    public removeComplete: EventEmitter<any[]>;
-
+    // Inputs
     @Input() public options: MasonryOptions;
+
+    // Outputs
+    @Output() layoutComplete: EventEmitter<any[]> = new EventEmitter<any[]>();
+    @Output() removeComplete: EventEmitter<any[]> = new EventEmitter<any[]>();
 
     ngOnInit() {
         // Create masonry options object
@@ -47,10 +51,6 @@ export class AngularMasonry implements OnInit {
 
         // console.log('AngularMasonry:', 'Initialized');
 
-        // Create EventEmitters
-        this.layoutComplete = new EventEmitter<any[]>();
-        this.removeComplete = new EventEmitter<any[]>();
-
         // Bind to events
         this._msnry.on('layoutComplete', items => {
             this.layoutComplete.emit(items);
@@ -60,18 +60,11 @@ export class AngularMasonry implements OnInit {
         });
     }
 
-    // ngOnDestroy() {
-    //     this._msnry.off('layoutComplete', this.onLayoutComplete);
-    //     this._msnry.off('removeComplete', this.onRemoveComplete);
-    // }
-
-    // private onLayoutComplete(items) {
-    //     this.layoutComplete.emit(items);
-    // }
-
-    // private onRemoveComplete(items) {
-    //     this.removeComplete.emit(items);
-    // }
+    ngOnDestroy() {
+        if (this._msnry) {
+            this._msnry.destroy();
+        }
+    }
 
     public layout() {
         setTimeout(() => {
