@@ -1,3 +1,6 @@
+declare var require: any;
+declare var imagesLoaded: any;
+
 import {
     Component,
     OnInit,
@@ -24,7 +27,7 @@ export class AngularMasonry implements OnInit, OnDestroy {
     ) { }
 
     private _msnry = null;
-    private _imagesLoaded = null;
+    // private _imagesLoaded = null;
 
     // Inputs
     @Input() public options: MasonryOptions;
@@ -35,9 +38,10 @@ export class AngularMasonry implements OnInit, OnDestroy {
     @Output() removeComplete: EventEmitter<any[]> = new EventEmitter<any[]>();
 
     ngOnInit() {
-        if (this.useImagesLoaded) {
-            this._imagesLoaded = require('imagesloaded');
-        }
+        ///TODO: How to load imagesloaded only if this.useImagesLoaded===true?
+        // if (this.useImagesLoaded) {
+        //     this._imagesLoaded = require('imagesloaded');
+        // }
 
         // Create masonry options object
         if (!this.options) this.options = {};
@@ -83,16 +87,11 @@ export class AngularMasonry implements OnInit, OnDestroy {
     // public add(element: HTMLElement, prepend: boolean = false) {
     public add(element: HTMLElement) {
 
-        // let el: HTMLElement = this._element.nativeElement;
-        // let elParent: HTMLElement = el.parentElement;
-
-        // console.log(this._element);
-
         // Tell Masonry that a child element has been added
         this._msnry.addItems(element);
 
         if (this.useImagesLoaded) {
-            this._imagesLoaded(element, instance => {
+            imagesLoaded(element, instance => {
                 this._element.nativeElement.appendChild(element);
                 // Layout items
                 this.layout();
@@ -106,20 +105,10 @@ export class AngularMasonry implements OnInit, OnDestroy {
             this.layout();
         }
 
-        // if (prepend) {
-        //     this._msnry.prepend(element);
-        // }
-        // else {
-        //     this._msnry.appended(element);
-        // }
-
-        // // Layout items
-        // this.layout();
-
         // console.log('AngularMasonry:', 'Brick added');
     }
 
-    public remove(element) {
+    public remove(element: HTMLElement) {
         // Tell Masonry that a child element has been removed
         this._msnry.remove(element);
 

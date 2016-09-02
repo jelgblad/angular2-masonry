@@ -11,9 +11,6 @@
     "@angular/core": "2.0.0-rc.5",
     "typescript": "^1.8.10"
   },
-  "peerDependencies": {
-    "imagesloaded": "4.1.x"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "tsc -w",
