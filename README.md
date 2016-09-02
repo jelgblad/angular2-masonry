@@ -112,20 +112,7 @@ The `options`-attribute takes an object with the following properties:
 * resize: boolean;
 * initLayout: boolean;
 
-### imagesLoaded
->**NOTE:** Will throw error if global `imagesLoaded` not available.
-
-Delay adding of brick until all images in brick are loaded.
-To activate imagesLoaded set `useImagesLoaded` to `true`.
-```html
-<masonry [useImagesLoaded]="true"></masonry>
-```
-index.html:
-```html
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js"></script>
-```
-
-### Examples
+#### Examples
 
 Inline object:
 ```html
@@ -142,6 +129,19 @@ public myOptions: MasonryOptions = {
 ```
 ```html
 <masonry [options]="myOptions"></masonry>
+```
+
+### imagesLoaded
+>**NOTE:** Will throw error if global `imagesLoaded` not available.
+
+Delay adding of brick until all images in brick are loaded.
+To activate imagesLoaded set `useImagesLoaded` to `true`.
+```html
+<masonry [useImagesLoaded]="true"></masonry>
+```
+index.html:
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js"></script>
 ```
 
 ## Events
