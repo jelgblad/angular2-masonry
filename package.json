@@ -7,8 +7,7 @@
     "masonry-layout": "^4.1.1"
   },
   "devDependencies": {
-    "@angular/common": "^2.0.0-rc.5",
-    "@angular/core": "2.0.0-rc.5",
+    "@angular/core": "2.0.0-rc.6",
     "typescript": "^1.8.10"
   },
   "scripts": {
