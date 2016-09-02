@@ -115,6 +115,9 @@ The `options`-attribute takes an object with the following properties:
 ### imagesLoaded
 To activate iamgeLoaded set `useImagesLoaded` to `true`.
 Delay adding of brick until all images in brick are loaded.
+```html
+<masonry [useImagesLoaded]="true"></masonry>
+```
 >**NOTE:** Will throw error if global `imagesLoaded` not available.
 
 ### Examples
