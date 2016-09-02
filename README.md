@@ -95,9 +95,9 @@ Use version 0.0.20 or earlier.
  
 ## Configuration
 
+### Options
 Read about Masonry options here: http://masonry.desandro.com/options.html
 
-### Options
 The `options`-attribute takes an object with the following properties:
 * itemSelector: string;
 * columnWidth: number;
@@ -113,12 +113,17 @@ The `options`-attribute takes an object with the following properties:
 * initLayout: boolean;
 
 ### imagesLoaded
-To activate iamgeLoaded set `useImagesLoaded` to `true`.
+>**NOTE:** Will throw error if global `imagesLoaded` not available.
+
 Delay adding of brick until all images in brick are loaded.
+To activate imagesLoaded set `useImagesLoaded` to `true`.
 ```html
 <masonry [useImagesLoaded]="true"></masonry>
 ```
->**NOTE:** Will throw error if global `imagesLoaded` not available.
+index.html:
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js"></script>
+```
 
 ### Examples
 
