@@ -112,7 +112,12 @@ The `options`-attribute takes an object with the following properties:
 * resize: boolean;
 * initLayout: boolean;
 
-#### Examples
+### imagesLoaded
+To activate iamgeLoaded set `useImagesLoaded` to `true`.
+Delay adding of brick until all images in brick are loaded.
+>**NOTE:** Will throw error if global `imagesLoaded` not available.
+
+### Examples
 
 Inline object:
 ```html
@@ -129,6 +134,20 @@ public myOptions: MasonryOptions = {
 ```
 ```html
 <masonry [options]="myOptions"></masonry>
+```
+
+## Events
+### layoutComplete: `EventEmitter<any[]>`
+Triggered after a layout and all positioning transitions have completed.
+>http://masonry.desandro.com/events.html#layoutcomplete
+
+### removeComplete: `EventEmitter<any[]>`
+Triggered after an item element has been removed.
+>http://masonry.desandro.com/events.html#removecomplete
+
+### Examples
+```html
+<masonry (layoutComplete)="doStuff($event)" (removeComplete)="doOtherStuff($event)"></masonry>
 ```
 
 ## Demo
