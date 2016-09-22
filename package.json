@@ -1,14 +1,14 @@
 {
   "name": "angular2-masonry",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Angular2 component for https://github.com/desandro/masonry",
   "main": "angular2-masonry.js",
   "dependencies": {
-    "masonry-layout": "^4.1.1"
+    "masonry-layout": "4.1.1"
   },
   "devDependencies": {
-    "@angular/core": "2.0.0-rc.6",
-    "typescript": "^1.8.10"
+    "@angular/core": "2.0.0",
+    "typescript": "2.0.3"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
