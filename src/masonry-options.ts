@@ -3,7 +3,7 @@
  */
 export interface MasonryOptions {
     itemSelector?: string;
-    columnWidth?: number;
+    columnWidth?: number | string;
     gutter?: number;
     percentPosition?: boolean;
     stamp?: string;
