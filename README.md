@@ -124,4 +124,5 @@ Triggered after an item element has been removed.
 ```
 
 ## Demo
-https://github.com/jelgblad/angular2-masonry-demo
+* Plunkr: https://run.plnkr.co/plunks/mmi5tk6hvzEazYQUGZUC
+* Demo project: https://github.com/jelgblad/angular2-masonry-demo
