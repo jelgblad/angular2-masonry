@@ -65,7 +65,7 @@ Read about Masonry options here: http://masonry.desandro.com/options.html
 
 The `options`-attribute takes an object with the following properties:
 * itemSelector: string;
-* columnWidth: number;
+* columnWidth: number | string;
 * gutter: number;
 * percentPosition: boolean;
 * stamp: string;
