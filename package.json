@@ -8,7 +8,7 @@
   },
   "devDependencies": {
     "@angular/core": "^2.0.1",
-    "typescript": "^1.8.10"
+    "typescript": "^2.0.3"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
