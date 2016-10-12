@@ -99,7 +99,7 @@ public myOptions: MasonryOptions = {
 ### imagesLoaded
 >**NOTE:** Will throw error if global `imagesLoaded` not available.
 
-Delay adding of brick until all images in brick are loaded.
+Delay adding brick until all images in brick are loaded.
 To activate imagesLoaded set `useImagesLoaded` to `true`.
 ```html
 <masonry [useImagesLoaded]="true"></masonry>
