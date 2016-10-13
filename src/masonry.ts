@@ -1,5 +1,4 @@
 declare var require: any;
-declare var imagesLoaded: any;
 
 import {
     Component,
@@ -13,6 +12,7 @@ import {
 
 // import * as masonry from 'masonry-layout';
 var masonry = require('masonry-layout');
+var imagesLoaded = require('imagesloaded');
 
 import { MasonryOptions } from './masonry-options';
 
@@ -26,8 +26,8 @@ export class AngularMasonry implements OnInit, OnDestroy {
         private _element: ElementRef
     ) { }
 
-    public _msnry: any;
-    // private _imagesLoaded = null;
+    private _msnry: any;
+    private _imagesLoaded: any;
 
     // Inputs
     @Input() public options: MasonryOptions;
@@ -38,11 +38,6 @@ export class AngularMasonry implements OnInit, OnDestroy {
     @Output() removeComplete: EventEmitter<any[]> = new EventEmitter<any[]>();
 
     ngOnInit() {
-        ///TODO: How to load imagesloaded only if this.useImagesLoaded===true?
-        // if (this.useImagesLoaded) {
-        //     this._imagesLoaded = require('imagesloaded');
-        // }
-
         // Create masonry options object
         if (!this.options) this.options = {};
 
@@ -68,6 +63,13 @@ export class AngularMasonry implements OnInit, OnDestroy {
         this._msnry.on('removeComplete', (items: any) => {
             this.removeComplete.emit(items);
         });
+
+        if (this.useImagesLoaded) {
+            this._imagesLoaded = imagesLoaded(this._element.nativeElement);
+            this._imagesLoaded.on('always', () => {
+                this.layout();
+            });
+        }
     }
 
     ngOnDestroy() {
