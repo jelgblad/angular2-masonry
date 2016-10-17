@@ -87,9 +87,11 @@ export class AngularMasonry implements OnInit, OnDestroy {
     // public add(element: HTMLElement, prepend: boolean = false) {
     public add(element: HTMLElement) {
         
+        var isFirstItem = false;
+
         // Check if first item
         if(this._msnry.items.length === 0){
-            this.layout();
+            isFirstItem = true;
         }
 
         if (this.useImagesLoaded) {
@@ -98,6 +100,9 @@ export class AngularMasonry implements OnInit, OnDestroy {
                 
                 // Tell Masonry that a child element has been added
                 this._msnry.appended(element);
+
+                // layout if first item
+                if(isFirstItem) this.layout();
             });
 
             this._element.nativeElement.removeChild(element);
@@ -105,6 +110,9 @@ export class AngularMasonry implements OnInit, OnDestroy {
         else {
             // Tell Masonry that a child element has been added
             this._msnry.appended(element);
+
+            // layout if first item
+            if (isFirstItem) this.layout();
         }
 
         // console.log('AngularMasonry:', 'Brick added');
