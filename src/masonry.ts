@@ -26,7 +26,7 @@ export class AngularMasonry implements OnInit, OnDestroy {
         private _element: ElementRef
     ) { }
 
-    private _msnry = null;
+    private _msnry: any;
     // private _imagesLoaded = null;
 
     // Inputs
@@ -62,10 +62,10 @@ export class AngularMasonry implements OnInit, OnDestroy {
         // console.log('AngularMasonry:', 'Initialized');
 
         // Bind to events
-        this._msnry.on('layoutComplete', items => {
+        this._msnry.on('layoutComplete', (items: any) => {
             this.layoutComplete.emit(items);
         });
-        this._msnry.on('removeComplete', items => {
+        this._msnry.on('removeComplete', (items: any) => {
             this.removeComplete.emit(items);
         });
     }
@@ -93,7 +93,7 @@ export class AngularMasonry implements OnInit, OnDestroy {
         }
 
         if (this.useImagesLoaded) {
-            imagesLoaded(element, instance => {
+            imagesLoaded(element, (instance: any) => {
                 this._element.nativeElement.appendChild(element);
                 
                 // Tell Masonry that a child element has been added
