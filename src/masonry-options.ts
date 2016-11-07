@@ -4,7 +4,7 @@
 export interface MasonryOptions {
     itemSelector?: string;
     columnWidth?: number | string;
-    gutter?: number;
+    gutter?: number | string;
     percentPosition?: boolean;
     stamp?: string;
     fitWidth?: boolean;
