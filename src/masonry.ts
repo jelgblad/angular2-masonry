@@ -26,7 +26,7 @@ export class AngularMasonry implements OnInit, OnDestroy {
         private _element: ElementRef
     ) { }
 
-    private _msnry: any;
+    public _msnry: any;
     // private _imagesLoaded = null;
 
     // Inputs
