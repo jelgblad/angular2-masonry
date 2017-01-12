@@ -58,6 +58,38 @@ import { MasonryModule } from 'angular2-masonry';
  }
  ```
  
+## Installation for [Angular 2 CLI](https://github.com/angular/angular-cli)
+ 
+Install package:
+
+ * Through npm: `npm install angular2-masonry --save`
+ 
+Configure the module loader:
+* SystemJS `src->system-config.ts`: Add the following to SystemJS Config
+
+```javascript
+const map: any = {
+  "angular2-masonry": "vendor/angular2-masonry" 
+}
+const packages: any = {
+  "angular2-masonry": { "defaultExtension": "js", "main": "index" }
+}
+const paths: any = {
+  "masonry-layout": "vendor/masonry-layout/dist/masonry.pkgd.js"
+}
+
+...
+
+System.config({ map, packages, paths });
+```
+
+Configure the angular cli builder:
+* Angular2App `angular-cli-build.js`: Add these to the `vendorNpmFiles` array:
+
+>`'angular2-masonry/**/*.+(js|js.map)', 'masonry-layout/dist/masonry.pkgd.js'`
+ 
+ Then use as described above in components.
+ 
 ## Configuration
 
 ### Options
