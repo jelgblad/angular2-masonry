@@ -31,7 +31,7 @@ export class AngularMasonryBrick implements OnDestroy, AfterViewInit {
             this._parent.add(this._element.nativeElement);
             this.watchForHtmlChanges();
         } catch (e) {
-            // console.error('[Error]', e)
+            // console.error('[Error]', e);
         }
     }
 
