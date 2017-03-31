@@ -105,7 +105,7 @@ export class AngularMasonry implements OnInit, OnDestroy {
                 if(isFirstItem) this.layout();
             });
 
-            this._element.nativeElement.removeChild(element);
+            try{this._element.nativeElement.removeChild(element)}catch(err){};
         }
         else {
             // Tell Masonry that a child element has been added
