@@ -95,7 +95,7 @@ export class AngularMasonry implements OnInit, OnDestroy {
         }
 
         if (this.useImagesLoaded) {
-            imagesLoaded(element, (instance: any) => {
+            imagesLoaded(element, () => {
                 this._element.nativeElement.appendChild(element);
                 
                 // Tell Masonry that a child element has been added

@@ -42,7 +42,7 @@ export class AngularMasonryBrick implements OnDestroy, AfterViewInit {
         if (MutationObserver) {
             /** Watch for any changes to subtree */
             let self = this;
-            let observer = new MutationObserver(function(mutations, observerFromElement) {
+            let observer = new MutationObserver(function() {
                 self._parent.layout();
             });
 
