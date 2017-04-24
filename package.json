@@ -1,10 +1,11 @@
 {
-  "name": "angular2-masonry",
+  "name": "angular-masonry-ts",
   "version": "0.4.0",
   "description": "Angular2 component for https://github.com/desandro/masonry",
-  "main": "angular2-masonry.js",
+  "main": "angular2-masonry.ts",
   "dependencies": {
-    "masonry-layout": "^4.1.1"
+    "masonry-layout": "^4.1.1",
+    "element-resize-detector": "^1.1.9"
   },
   "devDependencies": {
     "@angular/core": "^2.1.0",
@@ -22,7 +23,7 @@
   "typings": "./index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jelgblad/angular2-masonry.git"
+    "url": "git+https://github.com/dbartumeu/angular2-masonry.git"
   },
   "keywords": [
     "angular2",
@@ -35,5 +36,5 @@
   "bugs": {
     "url": "https://github.com/jelgblad/angular2-masonry/issues"
   },
-  "homepage": "https://github.com/jelgblad/angular2-masonry#readme"
+  "homepage": "https://github.com/dbartumeu/angular2-masonry#readme"
 }
