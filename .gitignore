@@ -5,6 +5,7 @@ npm-debug.log*
 
 # Visual studio config
 .vscode/
+.idea
 
 # OS generated files
 Thumbs.db

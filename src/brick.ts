@@ -15,6 +15,7 @@ import {
 } from '@angular/core';
 
 import { AngularMasonry } from './masonry';
+import elementResizeDetectorMaker  from 'element-resize-detector';
 
 @Directive({
     selector: '[masonry-brick], masonry-brick'
@@ -37,21 +38,27 @@ export class AngularMasonryBrick implements OnDestroy, AfterViewInit {
 
     /** When HTML in brick changes dinamically, observe that and change layout */
     private watchForHtmlChanges(): void {
+        let self = this;
         MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
 
         if (MutationObserver) {
             /** Watch for any changes to subtree */
-            let self = this;
-            let observer = new MutationObserver(function(mutations, observerFromElement) {
+            let subtreeObserver = new MutationObserver(function(mutations, observerFromElement) {
                 self._parent.layout();
             });
 
             // define what element should be observed by the observer
             // and what types of mutations trigger the callback
-            observer.observe(this._element.nativeElement, {
+            subtreeObserver.observe(this._element.nativeElement, {
                 subtree: true,
                 childList: true
             });
         }
+
+        let DimensionsObserver = elementResizeDetectorMaker();
+        DimensionsObserver.listenTo( this._element.nativeElement, element => {
+            self._parent.layout();
+        })
+
     }
 }
