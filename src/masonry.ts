@@ -83,6 +83,13 @@ export class AngularMasonry implements OnInit, OnDestroy {
 
         // console.log('AngularMasonry:', 'Layout');
     }
+    
+    public reloadItems() {
+      setTimeout(() => {
+        this._msnry.reloadItems();
+        this._msnry.layout();
+      });
+    }
 
     // public add(element: HTMLElement, prepend: boolean = false) {
     public add(element: HTMLElement) {
