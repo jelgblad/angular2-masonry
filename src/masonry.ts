@@ -39,9 +39,10 @@ export class AngularMasonry implements OnInit, OnDestroy {
 
     ngOnInit() {
         ///TODO: How to load imagesloaded only if this.useImagesLoaded===true?
-        // if (this.useImagesLoaded) {
-        //     this._imagesLoaded = require('imagesloaded');
-        // }
+        if (this.useImagesLoaded) { 
+            // npm install imagesloaded before you require
+            this._imagesLoaded = require('imagesloaded');
+        }
 
         // Create masonry options object
         if (!this.options) this.options = {};
@@ -56,11 +57,25 @@ export class AngularMasonry implements OnInit, OnDestroy {
             this._element.nativeElement.style.display = 'block';
         }
 
+        // call to Init Masonry
+        if(this._imagesLoaded) // if _imagesLoaded available
+          this._imagesLoaded(this._element.nativeElement, this.masonryInit);
+        else // if _imagesLoaded not available
+            this.masonryInit();
+    }
+
+    ngOnDestroy() {
+        if (this._msnry) {
+            this._msnry.destroy();
+        }
+    }
+
+    masonryInit(){
         // Initialize Masonry
         this._msnry = new masonry(this._element.nativeElement, this.options);
 
         // console.log('AngularMasonry:', 'Initialized');
-
+        
         // Bind to events
         this._msnry.on('layoutComplete', (items: any) => {
             this.layoutComplete.emit(items);
@@ -68,12 +83,6 @@ export class AngularMasonry implements OnInit, OnDestroy {
         this._msnry.on('removeComplete', (items: any) => {
             this.removeComplete.emit(items);
         });
-    }
-
-    ngOnDestroy() {
-        if (this._msnry) {
-            this._msnry.destroy();
-        }
     }
 
     public layout() {
